@@ -1,0 +1,28 @@
+{
+  "$id": "ce_headerfooter",
+  "filter": {
+    "entityIds": ["headerfooter"]
+  },
+  "source": "knowledgeGraph",
+  "fields": [
+
+    "name",
+    "c_footerData",
+    "c_copyrighttext",
+    "c_privacy",
+    "c_newPatient",
+    "c_footerLogo",
+    "c_headerLogo",
+    "c_socialButton",
+    "c_socialPhoto",
+    "c_headerNavigation",
+    "c_bannerpara",
+    "c_bannerHeading",
+    "c_bannerphoto",
+    "c_bannerCtas"
+  ],
+  "localization": {
+    "locales": ["en"],
+    "primary": false
+  }
+}
