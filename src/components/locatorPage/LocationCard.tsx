@@ -184,7 +184,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             )}
 
             <div className="button-bx">
-              <a
+              <Link
                 type="button"
                 href={url}
                 eventName={`stationDetail`}
@@ -193,7 +193,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
                
                 {StaticData.StoreDetailbtn}
-              </a>
+              </Link>
               <Link
                 type="button"
                 href={"#"}

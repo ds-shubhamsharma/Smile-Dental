@@ -101,7 +101,7 @@ export default function InputDropdown({
       dropdownHidden: true,
     }
   );
-  // console.log('inputValue', inputValue)
+  console.log('inputValue', inputValue)
   const shouldDisplayDropdown = !dropdownHidden && !forceHideDropdown;
 // console.log('inputValue', inputValue)
   const [focusedOptionId, setFocusedOptionId] = useState<string | undefined>(
@@ -111,6 +111,7 @@ export default function InputDropdown({
   const [childrenKey, setChildrenKey] = useState(0);
 
   const [keyUpStatus, setKeyUpStatus] = useState(true);
+  const [errors, setErrors] = useState(false);
 
   const screenReaderInstructionsId = useMemo(() => uuid(), []);
 
@@ -223,6 +224,14 @@ export default function InputDropdown({
       // setInputValue('');
       getCoordinates(Search);
     }
+    /**validation for input text */
+      if(inputValue==0 && evt.key == "Enter" ){
+        setErrors(true);
+      }
+      else{
+        setErrors(false)
+      }
+      console.log('errors', errors)
     // document.querySelector('.z-10').classList.add('hidden');
     // handleInputValue();
     if (evt.key === "Backspace" || evt.key === "x" || evt.key === "Delete") {
@@ -359,7 +368,7 @@ export default function InputDropdown({
           {renderSearchButton()}
         </div>
       </div>
-      
+      <p className="text-[red] text-xl">{errors?"please enter value":""}</p>
 
       {shouldDisplayDropdown && Children.count(children) !== 0 && (
         <>
