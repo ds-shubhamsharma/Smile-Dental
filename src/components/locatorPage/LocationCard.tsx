@@ -79,6 +79,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 />
               </div>
               <h2>
+              {/* <Link href={url}>{result.rawData.name}</Link> */}
                 <a className="inline-block text-black notHighlight" href={url}>
                   {result.rawData.name}
                 </a>
@@ -183,7 +184,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
             )}
 
             <div className="button-bx">
-              <Link
+              <a
                 type="button"
                 href={url}
                 eventName={`stationDetail`}
@@ -192,7 +193,7 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
                 {/* <div dangerouslySetInnerHTML={{__html: View_Store}}/> */}
                
                 {StaticData.StoreDetailbtn}
-              </Link>
+              </a>
               <Link
                 type="button"
                 href={"#"}

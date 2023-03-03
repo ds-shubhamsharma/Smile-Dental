@@ -46,7 +46,7 @@ const SearchLayout = (props: any): JSX.Element => {
   // const locationResults = useSearchState((s) => s.vertical.results) || [];
   const [inputvalue, setInputValue] = React.useState("");
   const [allowlocation, setallowLocation] = React.useState("");
-  const[showError,setShowError]=React.useState(false);
+  const [showError, setShowError] = React.useState(false);
   const [offset, setOffset] = React.useState(0);
   const searchActions = useSearchActions();
   const state = useSearchState((s) => s) || [];
@@ -217,7 +217,6 @@ const SearchLayout = (props: any): JSX.Element => {
       }
     });
   };
-var errors=";"
   const Findinput = () => {
     let searchKey = document.getElementsByClassName("FilterSearchInput");
     let Search = searchKey[0].value;
@@ -225,9 +224,9 @@ var errors=";"
       setInputValue("");
       getCoordinates(Search);
       setShowError(false);
-    }else  if (Search.length === 0) {
+    } else if (Search.length === 0) {
       setShowError(true);
-     }
+    }
   };
 
   const handleInputValue = () => {
@@ -375,6 +374,10 @@ var errors=";"
                 },
                 {
                   entityType: "location",
+                  fieldApiName: "address.line2",
+                },
+                {
+                  entityType: "location",
                   fieldApiName: "address.postalCode",
                 },
                 {
@@ -387,13 +390,8 @@ var errors=";"
                 },
                 {
                   entityType: "location",
-                  fieldApiName: "address.region",
+                  fieldApiName: "address.countryCode",
                 },
-                // {
-                //   entityType: "location",
-                //   fieldApiName: "address.countryCode",
-
-                // },
               ]}
               handleInputValue={handleInputValue}
             />
@@ -407,7 +405,9 @@ var errors=";"
               <span dangerouslySetInnerHTML={{ __html: search_icn }} />
             </button>
           </div>
-          <p className="text-[#FF0000] ml-[190px] text-xl">{showError?"please fill the value":""}</p>
+          <p className="text-[#FF0000] ml-[190px] text-xl">
+            {showError ? "please fill the value" : ""}
+          </p>
 
           {/* <FilterAwesome /> */}
 
