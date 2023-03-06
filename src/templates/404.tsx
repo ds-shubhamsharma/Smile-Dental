@@ -12,13 +12,13 @@ import {
   import Header from "../components/layouts/header";
   import Footer from "../components/layouts/footer";
   import PageLayout from "../components/layouts/PageLayout";
-  import faviconA from "../images/faviconA.jpg";
+  // import {favicon} from "../../sites-global/global"
   import {
     AnalyticsProvider,
     AnalyticsScopeProvider,
     Link,
   } from "@yext/pages/components";
-import { AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie } from "../../sites-global/global";
+import { AnalyticsEnableDebugging, AnalyticsEnableTrackingCookie, favicon } from "../../sites-global/global";
 import { StaticData } from "../../sites-global/staticData";
   // The path must be exactly 404.html
   export const getPath: GetPath<TemplateProps> = () => {
@@ -60,14 +60,14 @@ import { StaticData } from "../../sites-global/staticData";
           attributes: {
             rel: "icon",
             type: "image/x-icon",
-            href: faviconA,
+            href: favicon,
           },
         },
         {
           type: "meta",
           attributes: {
             name: "meta:description",
-            content: "Connected Kerb provide a unique approach to electric vehicle charging infrastructure – one that champions sustainability and connectivity.",
+            content: "Pecific Smile Dental",
           },
         },
   
@@ -82,7 +82,7 @@ import { StaticData } from "../../sites-global/staticData";
           type: "meta",
           attributes: {
             name: "author",
-            content: "Connected Cerb Power EV Stations",
+            content: "Pecific Smile Dental",
           },
         },
       ],
@@ -119,7 +119,7 @@ import { StaticData } from "../../sites-global/staticData";
         <PageLayout prop={_site} datas={undefined}>
         
           <div className="">
-            <div className="text-center text-[#4c4b5e] text-6xl pt-32">
+            <div className="text-center text-[#255ec1] text-6xl pt-32">
              {StaticData.PagenotFound}
             </div>
        
@@ -127,7 +127,7 @@ import { StaticData } from "../../sites-global/staticData";
   
           <div className="pb-32 pt-8">
             <Link href="/">
-            <button className="flex button px-2 text-white bg-[#314448] hover:bg-[#54962f] font-bold py-2 px-4 mx-auto">
+            <button className="flex button px-2 text-white bg-[#255ec1] hover:bg-[#10365b] font-bold py-2 px-4 mx-auto">
             {StaticData.goHomeCTA}
             </button>
             </Link>

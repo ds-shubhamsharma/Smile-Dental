@@ -69,7 +69,7 @@ const GetDirection = (props: GetDirection) => {
       <Link
         data-ya-track="getdirections"
         eventName={`getdirections`}
-        className="btn notHighlight"
+        className="btn"
         onClick={getDirectionUrl}
         href="javascript:void(0);"
         rel="noopener noreferrer"

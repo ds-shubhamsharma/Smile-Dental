@@ -101,7 +101,7 @@ export default function InputDropdown({
       dropdownHidden: true,
     }
   );
-  console.log('inputValue', inputValue)
+  // console.log('inputValue', inputValue)
   const shouldDisplayDropdown = !dropdownHidden && !forceHideDropdown;
 // console.log('inputValue', inputValue)
   const [focusedOptionId, setFocusedOptionId] = useState<string | undefined>(

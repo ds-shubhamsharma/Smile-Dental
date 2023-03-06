@@ -217,6 +217,7 @@ const SearchLayout = (props: any): JSX.Element => {
       }
     });
   };
+
   const Findinput = (e: KeyboardEvent) => {
     let searchKey = document.getElementsByClassName("FilterSearchInput");
     let Search = searchKey[0].value;

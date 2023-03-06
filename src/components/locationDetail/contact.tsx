@@ -76,18 +76,21 @@ const Contact = (props: any) => {
             </a>
           </div>
         </div> */}
-
-        <div className="button-bx ">
-          <a className="Link btn">
-            <a href="#">Book Now</a>
-          </a>
-          <GetDirection
-            className="Link btn"
-            buttonText="Direction"
-            address={address}
-            latitude={latitude}
-            longitude={longitude}
-          />
+        <div className="flex"> 
+          <div className="button-bx ">
+            <a href="#" className="Link btn">
+              Book Now
+            </a>
+          </div>
+          <div className="button-bx ">
+            <GetDirection
+              className="Link btn"
+              buttonText="Direction"
+              address={address}
+              latitude={latitude}
+              longitude={longitude}
+            />
+          </div>
         </div>
       </div>
       {hours && typeof hours.monday != "undefined" ? (
