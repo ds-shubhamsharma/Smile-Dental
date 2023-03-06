@@ -438,10 +438,10 @@ const Location: Template<ExternalApiRenderData> = ({
     : null;
   return (
     <>
-      <JsonLd<Store>
+      <JsonLd<MedicareServices>
         item={{
           "@context": "https://schema.org",
-          "@type": "DepartmentStore",
+          "@type": "MedicareServices",
           name: name,
           address: {
             "@type": "PostalAddress",

@@ -325,10 +325,10 @@ const country: Template<TemplateRenderProps> = ({
 
   return (
     <>
-      <JsonLd<Organization>
+      <JsonLd<MedicareServices>
         item={{
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "MedicareServices",
           name: "Connected Kerb",
           url: "",
           logo: "https://www.cenex.co.uk/app/uploads/2019/10/Picture3.png",

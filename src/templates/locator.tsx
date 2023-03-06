@@ -199,7 +199,7 @@ const Locator: Template<TemplateRenderProps> = ({ document, __meta }) => {
       <JsonLd<locator>
         item={{
           "@context": "https://schema.org",
-          "@type": "Organization",
+          "@type": "Medicare services",
           name: "pacific smiles dental",
           url: stagingBaseurl,
           logo: favicon,

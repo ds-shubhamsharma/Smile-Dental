@@ -385,10 +385,10 @@ const City: Template<TemplateRenderProps> = ({
   });
   return (
     <>
-      <JsonLd<Organization>
+      <JsonLd<MedicareServices>
         item={{
           "@context": "https://schema.org",
-          "@type": "Store",
+          "@type": "MedicareServices",
           name: "Pacific Smile Dental",
           //   url: _site.c_canonical,
           // logo: `${document.c_ogImage ? document.c_ogImage.map((result:any)=>{return result.url}) : ""}`
