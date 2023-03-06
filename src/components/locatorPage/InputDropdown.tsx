@@ -225,13 +225,13 @@ export default function InputDropdown({
       getCoordinates(Search);
     }
     /**validation for input text */
-      if(inputValue==0 && evt.key == "Enter" ){
-        setErrors(true);
-      }
-      else{
-        setErrors(false)
-      }
-      console.log('errors', errors)
+      // if(inputValue==0 && evt.key == "Enter" ){
+      //   setErrors(true);
+      // }
+      // else{
+      //   setErrors(false)
+      // }
+      // console.log('errors', errors)
     // document.querySelector('.z-10').classList.add('hidden');
     // handleInputValue();
     if (evt.key === "Backspace" || evt.key === "x" || evt.key === "Delete") {

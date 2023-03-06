@@ -217,7 +217,7 @@ const SearchLayout = (props: any): JSX.Element => {
       }
     });
   };
-  const Findinput = () => {
+  const Findinput = (e: KeyboardEvent) => {
     let searchKey = document.getElementsByClassName("FilterSearchInput");
     let Search = searchKey[0].value;
 
@@ -226,10 +226,10 @@ const SearchLayout = (props: any): JSX.Element => {
       getCoordinates(Search);
       setShowError(false);
     } 
-    else if (Search.length==0) {
-     alert("please enter value")
+    else if(Search.length==0 || e.key == "Enter" ){
+      setShowError(true);
     }
-    
+       
   };
 
   const handleInputValue = () => {
@@ -410,9 +410,9 @@ const SearchLayout = (props: any): JSX.Element => {
               <span dangerouslySetInnerHTML={{ __html: search_icn }} />
             </button>
           </div>
-          {/* <p className="text-[red] text-xl">
-            {showError ? "please fill the value" : ""}
-          </p> */}
+          <p className="text-[red] text-xl">
+            {showError ? "Please fill Value" : ""}
+          </p>
 
           {/* <FilterAwesome /> */}
 
