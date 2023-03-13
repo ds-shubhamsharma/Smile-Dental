@@ -1,7 +1,7 @@
 import * as React from "react";
 
 export const stagingBaseurl =
-  "https://merrily-confused-maggot.sbx.pgsdemo.com/";
+  "https://main-merrily--confused--maggot-sbx-pgsdemo-com.sbx.preview.pagescdn.com/";
 export const cookieText =
   "This site uses cookies to store information on your computer. ";
 export const cookieText1 =
