@@ -70,7 +70,7 @@ export default function Nearby(props: any) {
           "/" +
           finalcity +
           "/" +
-          location.data.name.toString();
+          location.data.name.toLowerCase();
 
         if (!location.data.slug) {
           url = `/${links}.html`;

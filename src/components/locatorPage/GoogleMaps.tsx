@@ -470,7 +470,7 @@ function UnwrappedGoogleMaps({
       "/" +
       finalcity +
       "/" +
-      result.rawData.name.toString();
+      result.rawData.name.toLowerCase();
     if (!result.rawData.slug) {
       url = `${links}.html`;
     } else {
