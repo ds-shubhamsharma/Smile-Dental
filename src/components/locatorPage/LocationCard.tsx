@@ -56,7 +56,7 @@ var initialcountry: any = country.toString();
   var finalcity: any = initialrcity.replaceAll(" ", "-");
   var string: any = name.toString();
   let result1: any = string.replaceAll(" ", "-");
-  var links:any=finalcountry+"/"+finalregion+"/"+ finalcity+"/"+ result.rawData.name.toString();
+  var links:any=finalcountry+"/"+finalregion+"/"+ finalcity+"/"+ result.rawData.name.toLowerCase();
   if (!result.rawData.slug) {
     url = `${links}.html`;
   } else {
