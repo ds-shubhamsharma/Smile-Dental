@@ -132,7 +132,7 @@ export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
         type: "meta",
         attributes: {
           property: "og:title",
-          content: `${document.c_meta_title?document.c_meta_title:`pacific smiles dental Find Connected Here.`}`,
+          content: `${document.c_meta_title?document.c_meta_title:`pacific smiles dental Find Dental store.`}`,
         },
       },
       {

@@ -222,13 +222,7 @@ const City: Template<TemplateRenderProps> = ({
     c_metaTitle,
     _site,
   } = document;
- console.log(document.slug,"shubham")
-  console.log(document.dm_directoryParents[1].slug,"ejdmgdvhbdkgdafgzdfj")
-  console.log(document.dm_directoryParents[2].slug,"ejdmgdvhbdkgdafgzdfj")
-  // console.log(document.dm_directoryChildren,"ejdmgdvhbdkgdafgzdfj")
-  // console.log(links,"gdff")
-  // console.log('document.dm_directoryParents[1].slug + document.dm_directoryChildren[1].slug;', document.dm_directoryParents[1].slug , document.dm_directoryChildren[1].slug)
-  
+
   var address;
   // var sortedChildren = dm_directoryChildren.sort(function (a: any, b: any) {
   //   var a = a.name;
