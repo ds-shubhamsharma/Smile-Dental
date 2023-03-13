@@ -142,7 +142,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     url += `${document.name.toString()}.html`;
   }
 
-  return url;
+  return url.toLowerCase();
   //   return document.id.toString() + ".html";
 };
 
