@@ -246,7 +246,7 @@ function UnwrappedGoogleMaps({
         bounds.extend(center);
         bounds.extend(position);
         map.fitBounds(bounds);
-         map.setZoom(6);
+        map.setZoom(6);
       }, 1000);
     } else if (hover) {
       map?.setZoom(zoom);
@@ -451,18 +451,28 @@ function UnwrappedGoogleMaps({
   function Infowindow(i: Number, result: any): void {
     info = true;
     let url = "";
-
+    var country: any = result.rawData.address.countryCode?.toLowerCase();
+    var initialcountry: any = country.toString();
+    var finalcountry: any = initialcountry.replaceAll(" ", "-");
     var name: any = result.rawData.name?.toLowerCase();
     var region: any = result.rawData.address.region?.toLowerCase();
-    // var initialregion: any = region.toString();
-    // var finalregion: any = initialregion.replaceAll(" ", "-");
+    var initialregion: any = region.toString();
+    var finalregion: any = initialregion.replaceAll(" ", "-");
     var city: any = result.rawData.address.city?.toLowerCase();
     var initialrcity: any = city.toString();
     var finalcity: any = initialrcity.replaceAll(" ", "-");
     var string1: any = name.toString();
     let result1: any = string1.replaceAll(" ", "-");
+    var links: any =
+      finalcountry +
+      "/" +
+      finalregion +
+      "/" +
+      finalcity +
+      "/" +
+      result.rawData.name.toString();
     if (!result.rawData.slug) {
-      url = `${result1}.html`;
+      url = `${links}.html`;
     } else {
       url = `${result.rawData.slug.toString()}.html`;
     }
@@ -489,12 +499,13 @@ function UnwrappedGoogleMaps({
             ) : (
               ""
             )}
-          </div> 
+          </div>
           <div className="icon-row content-col">
             <Address address={result.rawData.address} />
           </div>
 
-          <div className="icon-row">{StaticData.Telephone}
+          <div className="icon-row">
+            {StaticData.Telephone}
             <div className="icon">
               {" "}
               <img className=" " src={Phonesvg} width="20" height="20" alt="" />
@@ -524,7 +535,8 @@ function UnwrappedGoogleMaps({
                     height="20"
                     alt=""
                   />{" "}
-                </div>{StaticData.openingHours}
+                </div>
+                {StaticData.openingHours}
 
                 <OpenClose
                   timezone={result.rawData.timezone}
@@ -569,7 +581,7 @@ function UnwrappedGoogleMaps({
                 rel="noopener noreferrer"
               >
                 {/* <div dangerouslySetInnerHTML={{__html: Directionsvg}}/> */}
-             
+
                 {StaticData.getDirection}
               </a>
             )}

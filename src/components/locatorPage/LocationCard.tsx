@@ -44,18 +44,21 @@ const LocationCard: CardComponent<Location> = ({ result }) => {
   const { address, c_features } = result.rawData;
   // console.log('c_features', result.rawData)
   let url = "";
-
+var country :any=result.rawData.address.countryCode?.toLowerCase();
+var initialcountry: any = country.toString();
+  var finalcountry: any = initialcountry.replaceAll(" ", "-");
   var name: any = result.rawData.name?.toLowerCase();
-  // var region: any = result.rawData.address.region?.toLowerCase();
-  // var initialregion: any = region.toString();
-  // var finalregion: any = initialregion.replaceAll(" ", "-");
+  var region: any = result.rawData.address.region?.toLowerCase();
+  var initialregion: any = region.toString();
+  var finalregion: any = initialregion.replaceAll(" ", "-");
   var city: any = result.rawData.address.city?.toLowerCase();
   var initialrcity: any = city.toString();
   var finalcity: any = initialrcity.replaceAll(" ", "-");
   var string: any = name.toString();
   let result1: any = string.replaceAll(" ", "-");
+  var links:any=finalcountry+"/"+finalregion+"/"+ finalcity+"/"+ result.rawData.name.toString();
   if (!result.rawData.slug) {
-    url = `${result1}.html`;
+    url = `${links}.html`;
   } else {
     url = `/${result.rawData.slug.toString()}.html`;
   }

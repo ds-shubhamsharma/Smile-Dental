@@ -222,14 +222,20 @@ const City: Template<TemplateRenderProps> = ({
     c_metaTitle,
     _site,
   } = document;
-
+ console.log(document.slug,"shubham")
+  console.log(document.dm_directoryParents[1].slug,"ejdmgdvhbdkgdafgzdfj")
+  console.log(document.dm_directoryParents[2].slug,"ejdmgdvhbdkgdafgzdfj")
+  // console.log(document.dm_directoryChildren,"ejdmgdvhbdkgdafgzdfj")
+  // console.log(links,"gdff")
+  // console.log('document.dm_directoryParents[1].slug + document.dm_directoryChildren[1].slug;', document.dm_directoryParents[1].slug , document.dm_directoryChildren[1].slug)
+  
   var address;
   // var sortedChildren = dm_directoryChildren.sort(function (a: any, b: any) {
   //   var a = a.name;
   //   var b = b.name;
   //   return a < b ? -1 : a > b ? 1 : 0;
   // });
-
+  const links=document.slug;
   let slugString = "";
   document.dm_directoryParents?.map((e: any) => {
     slugString += e.slug + "/";
@@ -249,10 +255,12 @@ const City: Template<TemplateRenderProps> = ({
 
       let url = "";
       if (!e.slug) {
-        let slugString = e.name;
-        let slug = slugify(slugString);
+        let slugString = e.name.toLowerCase();
+        var slug: any = slugString.toString();
+        // let slug: any = slugs.replaceAll(" ", "-");
+
         // console.log('slug', slug);
-        url = `/${slug}.html`;
+        url = links+"/"+`${slug}.html`;
       } else {
         url = `/${e.name?.toString()}.html`;
       }

@@ -216,13 +216,21 @@ const region: Template<TemplateRenderProps> = ({
     dm_directoryParents,
     dm_directoryChildren,
   } = document;
+  // console.log(document,"shubham")
+  // console.log(document.dm_directoryParents[1].slug,"ejdmgdvhbdkgdafgzdfj")
+  // console.log(document.dm_directoryChildren[1].slug,"ejdmgdvhbdkgdafgzdfj")
+  // console.log(document.dm_directoryChildren,"ejdmgdvhbdkgdafgzdfj")
+  // console.log(links,"gdff")
+  // console.log('document.dm_directoryParents[1].slug + document.dm_directoryChildren[1].slug;', document.dm_directoryParents[1].slug , document.dm_directoryChildren[1].slug)
+  
+  const links=document.slug+"/"+document.dm_directoryChildren[1].slug;
+
   const childrenDivs =
     dm_directoryChildren &&
     dm_directoryChildren?.map((entity: any) => {
       if (entity?.dm_directoryChildrenCount == 1) {
-        // console.log(entity,"dhfgbjsdb")
         let slugs =
-          "/" + entity?.dm_directoryChildren[0]?.name.toLowerCase() + ".html";
+          links+"/" + entity?.dm_directoryChildren[0]?.name.toLowerCase() + ".html";
         let slug: any = slugs.replaceAll(" ", "-");
         return (
           <div className="w-1/2 storelocation-category md:w-1/3 lg:w-1/4 px-4">

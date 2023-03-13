@@ -51,6 +51,9 @@ export default function Nearby(props: any) {
       {neabyData?.map((location: any, index: Number) => {
         // console.log('first0', location.data)
         let url = "";
+        var country: any = location.data.address.countryCode?.toLowerCase();
+        var initialcountry: any = country.toString();
+        var finalcountry: any = initialcountry.replaceAll(" ", "-");
         var name: any = location.data.name?.toLowerCase();
         var region: any = location.data.address.region?.toLowerCase();
         var initialregion: any = region.toString();
@@ -60,8 +63,17 @@ export default function Nearby(props: any) {
         var finalcity: any = initialrcity.replaceAll(" ", "-");
         var string: any = name.toString();
         let result1: any = string.replaceAll(" ", "-");
+        var links: any =
+          finalcountry +
+          "/" +
+          finalregion +
+          "/" +
+          finalcity +
+          "/" +
+          location.data.name.toString();
+
         if (!location.data.slug) {
-          url = `${result1}.html`;
+          url = `/${links}.html`;
         } else {
           url = `/${location.data.slug.toString()}.html`;
         }
