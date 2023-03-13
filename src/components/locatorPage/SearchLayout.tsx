@@ -35,14 +35,13 @@ import FilterSearch from "../locatorPage/FilterSearch";
 import { Link } from "@yext/pages/components";
 import ViewMore from "./utils/ViewMore";
 
-var params1: any = { latitude: -31.083332, longitude: 150.916672 };
+var params1: any = { latitude: -32.8674869, longitude: 151.20699020000006 };
 var mapzoom = 8;
-var centerLatitude = -31.083332;
-var centerLongitude = 150.916672;
+var centerLatitude = -32.8674869;
+var centerLongitude = 151.20699020000006;
 const SearchLayout = (props: any): JSX.Element => {
   const [isLoading, setIsloading] = React.useState(true);
   const [check, setCheck] = useState(false);
-  const locationResults = useSearchState((s) => s.vertical.results) || [];
   // const locationResults = useSearchState((s) => s.vertical.results) || [];
   const [inputvalue, setInputValue] = React.useState("");
   const [allowlocation, setallowLocation] = React.useState("");
@@ -80,8 +79,8 @@ const SearchLayout = (props: any): JSX.Element => {
 
     // }
     params1 = {
-      latitude: -31.083332,
-      longitude: 150.916672,
+      latitude: -32.8674869,
+      longitude: 151.20699020000006,
     };
     onClick;
     mapzoom = 8;
@@ -142,7 +141,7 @@ const SearchLayout = (props: any): JSX.Element => {
     });
   };
 
-  // const locationResults = useFetchResults() || [];
+  const locationResults = useFetchResults() || [];
   // useSearchState((state) => state.vertical?.results) || [];
 
   const bindInputKeyup = () => {

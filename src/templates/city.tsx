@@ -4,7 +4,9 @@ import GetDirection from "../components/commons/GetDirection";
 import constant from "../constant";
 
 import Phonesvg from "../images/phone.svg";
-import {favicon} from "../../sites-global/global"
+import timesvg from "../images/watch-icn.svg";
+
+import { favicon } from "../../sites-global/global";
 import map from "../images/map.svg";
 import "../index.css";
 var currentUrl = "";
@@ -77,7 +79,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
     }
   });
   return url;
-  
+
   // if (document.dm_directoryParents) {
   //   document?.dm_directoryParents?.map((i: any) => {
   //     if (i.meta?.entityType.id == "ce_country") {
@@ -93,10 +95,7 @@ export const getPath: GetPath<TemplateProps> = ({ document }) => {
   // } else {
   //   return `/${document.slug.toString()}.html`;
   // }
-
-
 };
-
 
 export const getHeadConfig: GetHeadConfig<TemplateRenderProps> = ({
   relativePrefixToRoot,
@@ -236,114 +235,108 @@ const City: Template<TemplateRenderProps> = ({
     slugString += e.slug + "/";
   });
 
-  const allCities = 
-  dm_directoryChildren &&
-  dm_directoryChildren?.map((e: any) => {
-    var origin: any = null;
-    if (e.address.city) {
-      origin = e.address.city;
-    } else if (e.address.region) {
-      origin = e.address.region;
-    } else {
-      origin = e.address.country;
-    }
+  const allCities =
+    dm_directoryChildren &&
+    dm_directoryChildren?.map((e: any) => {
+      var origin: any = null;
+      if (e.address.city) {
+        origin = e.address.city;
+      } else if (e.address.region) {
+        origin = e.address.region;
+      } else {
+        origin = e.address.country;
+      }
 
-    let url = "";
-    if (!e.slug) {
-      let slugString =e.name;
-      let slug = slugify(slugString);
-      // console.log('slug', slug);
-      url = `/${slug}.html`;
-    } else {
-      url = `/${e.name?.toString()}.html`;
-    }
+      let url = "";
+      if (!e.slug) {
+        let slugString = e.name;
+        let slug = slugify(slugString);
+        // console.log('slug', slug);
+        url = `/${slug}.html`;
+      } else {
+        url = `/${e.name?.toString()}.html`;
+      }
 
-
-    return (
-      <>
-        <div className="c_location">
-          <div className=" city-location">
-            <div className="location-name-miles icon-row">
-              <div className="flex">
-                <img src={map} alt="" width="20" height="20" />
-                <h2>
-                  <Link
-                    className="inline-block notHighlight px-1 text-black"
-                    href={url}
-                    eventName={`details`}
-                  >
-                    {e.name}
-                  </Link>
-                </h2>
+      return (
+        <>
+          <div className="c_location">
+            <div className=" city-location">
+              <div className="location-name-miles icon-row">
+                <div className="flex">
+                  <h2>
+                    <Link
+                      className="inline-block notHighlight px-1 text-black"
+                      href={url}
+                      eventName={`details`}
+                    >
+                      {e.name}
+                    </Link>
+                  </h2>
+                </div>
               </div>
-            </div>
-            <div className="icon-row">
-              <Address address={e.address} />
-            </div>
-            <div className="icon-row">
-              <div className="icon" />
-
-              <div className="content-col flex">
-                <img src={Phonesvg} alt="" width="20" height="20" />
+              <div className="icon-row">
+                <div className="icon">
+                  <img className="" src={map} alt="" width="20" height="20" />
+                </div>
+                <Address address={e.address} />
+              </div>
+              <div className="icon-row">
+                {/* <div className="content-col flex"> */}
+                <div className="icon">
+                  <img src={Phonesvg} alt="" width="20" height="20" />
+                </div>
                 <Link href={`tel:${e.mainPhone}`}>{e.mainPhone}</Link>
+                {/* </div> */}
               </div>
-            </div>
-            <div className="icon-row">
-              <div className="icon">
-                {" "}
-                {/* <img src={} className=" " width="20" height="20" alt="" />{" "} */}
+              <div className="icon-row">
+                <div className="icon">
+                  {" "}
+                  {/* <img src={} className=" " width="20" height="20" alt="" />{" "} */}
+                </div>
+                <div className="content-col open-now-string">
+                  {typeof e.hours?.reopenDate != "undefined" ? (
+                    <h6>{StaticData.tempClosed}</h6>
+                  ) : (
+                    <>
+                      <div className="flex">
+                      <div className="icon">
+                        <img
+                          className=" "
+                          src={timesvg}
+                          width="20"
+                          height="20"
+                          alt=""
+                        />{" "}
+                      </div>
+                        <OpenClose
+                          timezone={e.timezone}
+                          hours={e.hours}
+                          deliveryHours={e.hours}
+                        ></OpenClose>
+                      </div>
+                    
+                    </>
+                  )}
+                </div>
               </div>
-              <div className="content-col open-now-string">
-                {typeof e.hours?.reopenDate != "undefined" ? (
-                  <h6>{StaticData.tempClosed}</h6>
-                ) : (
-                  <>
-                    <div className="flex">
-                      <svg
-                        xmlns="http://www.w3.org/2000/svg"
-                        width="15"
-                        height="15"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          d="M971,4616a10,10,0,1,1,10-10A10.014,10.014,0,0,1,971,4616Zm0-18a8,8,0,1,0,8,8A8.01,8.01,0,0,0,971,4598Zm-.707,8.71,4,4,1.414-1.42-3.707-3.7V4600h-2v6A1,1,0,0,0,970.293,4606.71Z"
-                          transform="translate(-961 -4596)"
-                          fill="#255ec1"
-                          fill-rule="evenodd"
-                        />
-                      </svg>{" "}
-                      <OpenClose
-                        timezone={e.timezone}
-                        hours={e.hours}
-                        deliveryHours={e.hours}
-                      ></OpenClose>
-                    </div>
-                  </>
-                )}
-              </div>
-            </div>
-            <div className="icon-row content-col availability-col flex flex-row">
-              <div className="button-bx flex flex-row">
-                <Link
-                  className="btn"
-                  href={url}
-                  eventName={`storeDetails`}
-                >
-                  View Store
-                </Link>
-                <GetDirection
-                  buttonText="Direction"
-                  address={e.address}
-                  latitude={e.yextDisplayCoordinate.latitude}
-                  longitude={e.yextDisplayCoordinate.longitude}
-                />
+              <div className="icon-row content-col availability-col flex flex-row">
+                <div className="button-bx flex flex-row">
+                  <Link className="btn" href={url} eventName={`storeDetails`}>
+                    View Store
+                  </Link>
+                  <GetDirection
+                    buttonText="Direction"
+                    address={e.address}
+                    latitude={e.yextDisplayCoordinate.latitude}
+                    longitude={e.yextDisplayCoordinate.longitude}
+                  />
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </>
-    );
-  });
+        </>
+      );
+    });
   c_globalData &&
     c_globalData?.map((i: any) => {
       address = i.address ? i.address : [];

@@ -84,13 +84,13 @@ export default function Nearby(props: any) {
                     </Link>
                   </h3>
                   {typeof location.distance != "undefined" ? (
-                <div className="distance">
-                  {metersToMiles(location.distance)}{" "}
-                  <span>{StaticData.miles}</span>
-                </div>
-              ) : (
-                ""
-              )}
+                    <div className="distance">
+                      {metersToMiles(location.distance)}{" "}
+                      <span>{StaticData.miles}</span>
+                    </div>
+                  ) : (
+                    ""
+                  )}
                 </div>
 
                 {/* <div className="icon-row content-col">
@@ -148,13 +148,15 @@ export default function Nearby(props: any) {
                       data-id={`main-shop-${location.data.id}`}
                     >
                       {" "}
-                      <img
-                        className=" "
-                        src={timesvg}
-                        width="20"
-                        height="20"
-                        alt=""
-                      />
+                      <div className="icon">
+                        <img
+                          className=" "
+                          src={timesvg}
+                          width="20"
+                          height="20"
+                          alt=""
+                        />
+                      </div>
                       <OpenClose
                         timezone={location.data.timezone}
                         hours={location.data.hours}

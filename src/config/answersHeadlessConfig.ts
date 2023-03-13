@@ -9,9 +9,3 @@ export const answersHeadlessConfig: HeadlessProviderProps = {
   locale: 'en',
   sessionTrackingEnabled: true
 };
-
-
-
-
-
-

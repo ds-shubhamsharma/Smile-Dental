@@ -1,18 +1,18 @@
 import * as React from "react";
 
 export const stagingBaseurl =
-  "https://main-enjoyably--grieving--gelding-sbx-pgsdemo-com.sbx.preview.pagescdn.com/";
+  "https://merrily-confused-maggot.sbx.pgsdemo.com/";
 export const cookieText =
   "This site uses cookies to store information on your computer. ";
 export const cookieText1 =
   "Some of these cookies are necessary, while others help us to improve your experience by providing insights into how the site is being used. You can control your cookie preferences below.";
 export const cookieText2 =
   "By using our site, you accept the terms of our Privacy Notice";
-export const cookieText3 = "Privacy & Cookies Policy I Connected Kerb";
+export const cookieText3 = "Privacy & Cookies Policy I pecific smile dental";
 export const cookieText4 =
   "We won't track your information when you visit our site. But in order to comply with your preferences, we'll have to use just one tiny cookie so that you're not asked to make this choice again. ";
 export const cookieText5 = "Manage preferences";
-export const cookiesUrl = "https://www.connectedkerb.com/privacy?hsLang=en";
+export const cookiesUrl = "https://pacificsmilesdental.com.au/privacy-policy/";
 export const baseuRL = "https://liveapi-sandbox.yext.com/v2/accounts/me";
 
 export const favicon =
@@ -38,8 +38,8 @@ export const ecoMovementApiUrl =
 export const googleMapsConfig = {
   // centerLatitude: 40.712776,
   // centerLongitude: -74.005974,
-  centerLatitude: -31.083332,
-  centerLongitude: 150.916672,
+  centerLatitude: -32.8674869,
+  centerLongitude: 151.20699020000006,
 
   googleMapsApiKey: "AIzaSyDZNQlSlEIkFAct5VzUtsP4dSbvOr2bE18",
 };

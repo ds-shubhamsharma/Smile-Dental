@@ -14,7 +14,7 @@ export const OpenStausFunctions = {
     const tomorrow = new Date(currentTime.getTime() + 60 * 60 * 24 * 1000);
     let nextTomorrow = new Date(tomorrow.getTime() + 86400000);
     let Day = 0;
-    const yesterday = new Date(currentTime.getTime() - 60 * 60  *24 * 1000);
+    const yesterday = new Date(currentTime.getTime() - 60 * 60 * 24 * 1000);
     const nowTimeNumber =
       currentTime.getHours() + currentTime.getMinutes() / 60;
 
@@ -186,8 +186,6 @@ export const OpenStausFunctions = {
 
     const statusclass = "";
 
-   
-
     if (openRightNow) {
       // console.log("openRightNow");
 
@@ -199,7 +197,6 @@ export const OpenStausFunctions = {
       } else {
         return (
           <div className={"opendot green-dot"}>
-           
             <div className="hours-info ">
               {" "}
               <span className="font-second-main-font "> Open now - </span>
@@ -212,7 +209,7 @@ export const OpenStausFunctions = {
               Closing at{" "}
               <span className="lowercase">
                 {OpenStausFunctions.formatTime(currentInterval.end).replace(
-                  ":00",
+                  "",
                   ""
                 )}
               </span>{" "}
@@ -227,17 +224,16 @@ export const OpenStausFunctions = {
         return (
           <div className={"closeddot 4"}>
             <div className="red-dot">
-            
               <div className="hours-info ">
                 <span className="font-second-main-font "> Closed - </span>
                 {"Opens at "}
                 <span className="lowercase">
                   {OpenStausFunctions.formatTime(nextInterval.start).replace(
-                    ":00",
+                    "",
                     ""
                   )}
-                </span>
-                {" "}{week[Day]}
+                </span>{" "}
+                {week[Day]}
               </div>
             </div>{" "}
           </div>
@@ -246,7 +242,6 @@ export const OpenStausFunctions = {
         return (
           <div className={"closeddot 3"}>
             <div className="red-dot">
-             
               <div className="hours-info ">
                 <span className="font-second-main-font">Closed - </span>
                 {"Opens at "}
@@ -265,26 +260,25 @@ export const OpenStausFunctions = {
       return (
         <div className="closeddot 2">
           <div className="red-dot">
-           
             <div className="hours-info ">Closed</div>{" "}
           </div>
         </div>
       );
     }
   },
-  getYextTimeWithUtcOffset: (entityUtcOffsetSeconds:number) => {
+  getYextTimeWithUtcOffset: (entityUtcOffsetSeconds: number) => {
     const now = new Date();
     let utcOffset = 0;
     if (entityUtcOffsetSeconds) {
       utcOffset = entityUtcOffsetSeconds * 1000;
     }
     if (utcOffset !== 0) {
-      const localUtcOffset = now.getTimezoneOffset()  *60 * 1000;
+      const localUtcOffset = now.getTimezoneOffset() * 60 * 1000;
       return new Date(now.valueOf() + utcOffset + localUtcOffset);
     }
     return now;
   },
-  parseTimeZoneUtcOffset: (timeString:string) => {
+  parseTimeZoneUtcOffset: (timeString: string) => {
     if (!timeString) {
       return 0;
     }
@@ -292,9 +286,9 @@ export const OpenStausFunctions = {
     const hours = parseInt(parts[0].replace(/\u200E/g, ""), 10);
     const minutes = parseInt(parts[1].replace(/\u200E/g, ""), 10);
     if (hours < 0) {
-      return -(Math.abs(hours) + minutes / 60)  *60 * 60;
+      return -(Math.abs(hours) + minutes / 60) * 60 * 60;
     }
-    return (hours + minutes / 60)*  60 * 60;
+    return (hours + minutes / 60) * 60 * 60;
   },
 
   timeStringToNumber: (timeString: any) => {
@@ -375,7 +369,7 @@ export const OpenStausFunctions = {
     let milliseconds = Math.floor((duration % 1000) / 100),
       seconds = Math.floor((duration / 1000) % 60),
       minutes = Math.floor((duration / (1000 * 60)) % 60),
-      hours = Math.floor((duration / (1000  *60 * 60)) % 24);
+      hours = Math.floor((duration / (1000 * 60 * 60)) % 24);
     hours = hours < 10 ? hours : hours;
     return hours + ":00";
   },
@@ -413,9 +407,7 @@ export default function OpenClose(props: any) {
       ) : props.hours ? (
         //  <div class="closeing-div notHighlight" dangerouslySetInnerHTML={{__html: OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}} />
         <div className="closeing-div notHighlight">
-          {
-            OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}
-         
+          {OpenStausFunctions.formatOpenNowString(props.hours, props.timezone)}
         </div>
       ) : (
         <div className="closeddot  1">

@@ -115,8 +115,8 @@ function UnwrappedGoogleMaps({
     lng: Number,
   };
 
-  const locationResults = useSearchState((s) => s.vertical.results) || [];
-  // const locationResults = useFetchResults() || [];
+  // const locationResults = useSearchState((s) => s.vertical.results) || [];
+  const locationResults = useFetchResults() || [];
   locationResults.map((result: any, i: Number) => {
     if (i == 0) {
       center = {

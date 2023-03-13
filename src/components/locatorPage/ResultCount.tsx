@@ -66,7 +66,7 @@ export function ResultsCountDisplay({
 
   const messageArray = [
     "Showing ",
-    1 + offset,
+    1 ,
     " to ",
     offset + resultsLength,
     " of ",

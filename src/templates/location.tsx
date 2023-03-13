@@ -466,7 +466,6 @@ const Location: Template<ExternalApiRenderData> = ({
             item={{
               "@context": "https://schema.org",
               "@type": "FAQPage",
-
               mainEntity: c_faqRelation.map((i: any) => {
                 return {
                   "@type": "Question",
@@ -498,21 +497,13 @@ const Location: Template<ExternalApiRenderData> = ({
         {" "}
         <AnalyticsScopeProvider name={""}>
           <PageLayout prop={_site}>
-            {/* <Banner
-              // c_bannerheading={c_bannerheading}
-              name={`${name}`}
-              hours={hours}
-              timezone={timezone}
-              // bannerpara={c_bannerpara}
-              c_bannerCtas={c_bannercta}
-              bannerImage={c_bannerImage}
-            /> */}
             <BreadCrumbs
               name={name}
               parents={dm_directoryParents}
               baseUrl={relativePrefixToRoot}
               address={address}
             ></BreadCrumbs>
+
             <div className="location-information">
               <Contact
                 address={address}
@@ -553,17 +544,15 @@ const Location: Template<ExternalApiRenderData> = ({
                 </div>
               )}
             </div>
-
             <div className="container-custom">
               <About
                 name={c_aboutTitle}
                 c_photo={c_aboutPhoto}
-                // c_slide={c_aboutSlider}
                 description={c_descriptionAbout}
                 c_learnMoreCTA={c_aboutcta}
               />
             </div>
-            {/* <div className="container-custom">
+            {/*<div className="container-custom">
               <Facilities
                 c_dentalAccreditedPhpto={c_dentalAccreditedPhpto}
                 c_dentalAccreditedTitle={c_dentalAccreditedTitle}
@@ -608,7 +597,6 @@ const Location: Template<ExternalApiRenderData> = ({
               </div>
               <div className="view-more ">
                 <a href="/" className="">
-                  {" "}
                   {StaticData.AllLocationtext}
                 </a>
               </div>
